@@ -18,10 +18,14 @@ franchise = {
     'marvel' : ['Hulk', 'Thor', 'Black Widow']
 }
 z = [ {'x': 10, 'y': 20} ]
-#1.) How would you change the value 10 in x to 15?  Once you're done x should then be [ [5,2,3], [15,8,9] ].  
+#1.) How would you change the value 10 in x to 15?  Once you're done x should then be [ [5,2,3], [15,8,9] ].
+x[1][0] = 10
 #2.) How would you change the hero_name of the first hero from 'Batman' to "Dark Knight"?
+heros[0]['real_name'] = "Dark Knight"
 #3.) For the franchise dictionary, how would you change 'Aquaman' to 'Daredevil'?
+franchise['dc'][1] = 'Daredevil'
 #4.) For z, how would you change the value 20 to 30?
+z[0]['y'] = 30
 
 #-----------------------------------------------------------------
 #Problem 2
@@ -34,6 +38,15 @@ superheros = [
     {'real_name': 'Bruce Banner', 'hero_name': 'The Incredible Hulk'},
     {'real_name': 'Diana Prince', 'hero_name': 'Wonder Woman'}
 ]
+
+def iterateDictionary(superheros_list):
+    for superhero_dict in superheros_list:
+        text = ""
+        for key in superhero_dict:
+            text += key + " - " + superhero_dict[key]
+        print(text)
+
+iterateDictionary(superheros)
 
 #iterateDictionary(superheros) should output
 
