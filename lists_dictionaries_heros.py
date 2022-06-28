@@ -44,6 +44,8 @@ def iterateDictionary(superheros_list):
         text = ""
         for key in superhero_dict:
             text += key + " - " + superhero_dict[key]
+            if key != list(superhero_dict)[-1]:
+                text += ", "
         print(text)
 
 iterateDictionary(superheros)
@@ -66,6 +68,11 @@ iterateDictionary(superheros)
 #Bruce Banner
 #Diana Prince
 
+def iterateDictionary2(name_key, superheros_list):
+    for superhero in superheros_list:
+        print(superhero[name_key])
+
+iterateDictionary2('real_name', superheros)
 
 #-----------------------------------------------------------------
 #Problem 4
@@ -75,6 +82,17 @@ movie_collection = {
     'disney': ['Cinderella', 'Encanto', 'Little Mermaid', 'Tangled', 'Beauty & The Beast', 'Lion King', '101 Dalmations'],
     'pixar': ['Toy Story', 'Monsters, Inc.', 'Up', 'Finding Nemo', 'Coco', 'Wall-E', 'The Incredibles', 'Inside Out']
 }
+
+def iterateDictionary3(movie_dict):
+    for company in movie_dict:
+        print(str(len(movie_dict[company])) + " " + company.upper())
+        for movie in movie_dict[company]:
+            if company == list(movie_dict)[0]:
+                print("- " + movie)
+            else:
+                print("-" + movie)
+
+iterateDictionary3(movie_collection)
 
 #Expected Outpout
 #7 DISNEY
